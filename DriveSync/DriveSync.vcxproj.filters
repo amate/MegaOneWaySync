@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{ac6fc07a-71a9-430f-8688-0db907dbebb5}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{735696bd-8fb3-423f-b010-0af137263daa}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{9e701ec2-36b7-45ac-8074-7b2cabe2d2ce}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest</Extensions>
+    </Filter>
+    <Filter Include="Header Files\mega">
+      <UniqueIdentifier>{b01c61ea-da8f-4ef4-90bc-be229eae7f7b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriveSync.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mega\megabdb.cpp">
+      <Filter>Header Files\mega</Filter>
+    </ClCompile>
+    <ClCompile Include="mega\megacli.cpp">
+      <Filter>Header Files\mega</Filter>
+    </ClCompile>
+    <ClCompile Include="mega\megaclient.cpp">
+      <Filter>Header Files\mega</Filter>
+    </ClCompile>
+    <ClCompile Include="mega\megacrypto.cpp">
+      <Filter>Header Files\mega</Filter>
+    </ClCompile>
+    <ClCompile Include="mega\megawin32.cpp">
+      <Filter>Header Files\mega</Filter>
+    </ClCompile>
+    <ClCompile Include="MegaAppImpl.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileFolderTree.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainDlg.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TransactionView.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncManager.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DelayedDirectoryChangeHandler.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryChanges.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionDialog.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mega\mega.h">
+      <Filter>Header Files\mega</Filter>
+    </ClInclude>
+    <ClInclude Include="mega\megabdb.h">
+      <Filter>Header Files\mega</Filter>
+    </ClInclude>
+    <ClInclude Include="mega\megacli.h">
+      <Filter>Header Files\mega</Filter>
+    </ClInclude>
+    <ClInclude Include="mega\megaclient.h">
+      <Filter>Header Files\mega</Filter>
+    </ClInclude>
+    <ClInclude Include="mega\megacrypto.h">
+      <Filter>Header Files\mega</Filter>
+    </ClInclude>
+    <ClInclude Include="mega\megawin32.h">
+      <Filter>Header Files\mega</Filter>
+    </ClInclude>
+    <ClInclude Include="MegaAppImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileFolderTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryWatcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DelayedDirectoryChangeHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryChanges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ptreeWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AppConst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AppKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DriveSync.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\DriveSync.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
