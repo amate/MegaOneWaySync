@@ -2256,33 +2256,33 @@ void MegaClient::initsc()
 // erase and and fill user's local state cache
 void MegaClient::updatesc()
 {
-	if (sctable)
-	{
+	if (sctable) {
 		sctable->begin();
-
-		int complete;
 
 		// 1. update associated scsn
 		handle tscsn;
 		Base64::atob(scsn,(byte*)&tscsn,sizeof tscsn);
-		complete = sctable->put(CACHEDSCSN,(char*)&tscsn,sizeof tscsn);
+		int complete = sctable->put(CACHEDSCSN,(char*)&tscsn,sizeof tscsn);
 
-		if (complete)
-		{
+		if (complete) {
 			// 2. write new or update modified users
-			for (user_vector::iterator it = usernotify.begin(); it != usernotify.end(); it++) if ((complete = sctable->put(CACHEDUSER,*it,&key)) <= 0) break;
+			for (user_vector::iterator it = usernotify.begin(); it != usernotify.end(); it++) {
+				if ((complete = sctable->put(CACHEDUSER, *it, &key)) <= 0) {
+					break;
+				}
+			}
 		}
 
-		if (complete > 0)
-		{
+		if (complete > 0) {
 			// 3. write new or modified nodes, purge deleted nodes
-			for (node_vector::iterator it = nodenotify.begin(); it != nodenotify.end(); it++)
-			{
-				if ((*it)->removed && (*it)->dbid)
-				{
-					if (!(complete = sctable->del((*it)->dbid))) break;
+			for (node_vector::iterator it = nodenotify.begin(); it != nodenotify.end(); it++) {
+				if ((*it)->removed && (*it)->dbid) {
+					if (!(complete = sctable->del((*it)->dbid))) {
+						break;
+					}
+				} else if ((complete = sctable->put(CACHEDNODE, *it, &key)) <= 0) {
+					break;
 				}
-				else if ((complete = sctable->put(CACHEDNODE,*it,&key)) <= 0) break;
 			}
 		}
 
@@ -2292,9 +2292,10 @@ void MegaClient::updatesc()
 
 void MegaClient::finalizesc(int complete)
 {
-	if (complete > 0) sctable->commit();
-	else
-	{
+	if (complete > 0) {
+		sctable->commit();
+
+	} else {
 		sctable->abort();
 
 		if (!complete)

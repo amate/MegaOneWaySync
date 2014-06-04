@@ -56,6 +56,9 @@ WinHttpIO::WinHttpIO()
 	hSession = WinHttpOpen(L"MEGA Client Access Engine/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0);
 	ATLASSERT(hSession);
 
+	DWORD receiveTimeOut = 3 * 60 * 1000;	// 3min
+	ATLVERIFY(WinHttpSetOption(hSession, WINHTTP_OPTION_RECEIVE_TIMEOUT, &receiveTimeOut, sizeof(receiveTimeOut)));
+
 	completion = 0;
 }
 
@@ -242,8 +245,10 @@ void WinHttpIO::_ProcessIO(HttpReq* req, WinHttpContext* cpContext)
 				case kStepReceiveResponse:
 				{
 					bRet = ::WinHttpReceiveResponse(cpContext->hRequest, NULL);
-					if (bRet == FALSE)
+					if (bRet == FALSE) {
+						DWORD error = GetLastError();
 						throw std::exception("WinHttpReceiveResponse failed");
+					}
 					step = kStepQueryHeaders;
 				}
 				break;
